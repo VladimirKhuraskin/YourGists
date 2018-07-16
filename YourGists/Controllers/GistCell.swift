@@ -13,10 +13,6 @@ class GistCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     func configure(with gist: Gist) {
-        if gist.description == "" {
-            self.descriptionLabel.text = "noname gist"
-        } else {
-            self.descriptionLabel.text = gist.description!
-        }
+        self.descriptionLabel.text = gist.description == "" ? "noname gist" : gist.description!
     }
 }

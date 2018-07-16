@@ -18,7 +18,6 @@ class Gist {
     var createdAt: Date?
     var updatedAt: Date?
     
-    //Date Formatter
     static let sharedDateFormatter = dateFormatter()
     
     class func dateFormatter() -> DateFormatter {
@@ -30,7 +29,6 @@ class Gist {
     }
     
     required init(){
-        
     }
     
     required init?(json: [String: Any]) {
@@ -48,7 +46,6 @@ class Gist {
             self.ownerLogin = ownerJson["login"] as? String
         }
         
-        //files
         self.files = [File]()
         if let filesJSON = json["files"] as? [String: [String: Any]] {
             for(_, fileJSON) in filesJSON {
@@ -58,7 +55,6 @@ class Gist {
             }
         }
         
-        //TODO - Dates
         let dateFormatter = Gist.sharedDateFormatter
         if let dateString = json["created_at"] as? String {
             self.createdAt = dateFormatter.date(from: dateString)

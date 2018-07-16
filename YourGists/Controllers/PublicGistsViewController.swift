@@ -79,7 +79,7 @@ class PublicGistsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGists(urlToLoad: "users/\(username!)/gists")
-        title = username + "/gists"
+        title = username
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.separatorColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)

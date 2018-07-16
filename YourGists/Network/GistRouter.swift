@@ -14,7 +14,7 @@ enum GistRouter: URLRequestConvertible {
     static let baseURLString = "https://api.github.com/"
     
     case getAtPath(String)
-      case getAtPath2(String)
+    case getAtPath2(String)
     case getPublic()
     case getMine()
     case create([String: Any])

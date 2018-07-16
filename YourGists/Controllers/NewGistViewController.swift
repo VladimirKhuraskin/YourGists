@@ -27,8 +27,7 @@ class NewGistViewController: UITableViewController {
             let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             ac.addAction(cancel)
             present(ac, animated: true, completion: nil)
-        }
-        else {
+        } else {
             guard let description = descriptionTextField.text, let filename = filenameTextField.text, let fileContent = gistContentTextField.text else { return }
             var files = [File]()
             if let file = File(gName: filename, gContent: fileContent) {

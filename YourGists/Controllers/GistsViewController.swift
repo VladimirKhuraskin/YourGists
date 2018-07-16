@@ -12,7 +12,6 @@ import Alamofire
 
 class GistsViewController: UITableViewController, LoginViewDelegate, SFSafariViewControllerDelegate {
     
-    var username: String!
     var gists = [Gist]()
     var nextPageURLString: String?
     var isLoading: Bool = false
@@ -33,9 +32,6 @@ class GistsViewController: UITableViewController, LoginViewDelegate, SFSafariVie
         super.viewDidAppear(animated)
         if(!GithubManager.sharedInstance.isLoadingOAuthToken) {
             loadInitialData()
-        }
-        if username != nil {
-            title = username + "/gists"
         }
     }
     
@@ -197,7 +193,6 @@ class GistsViewController: UITableViewController, LoginViewDelegate, SFSafariVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GistCell
         cell.backgroundColor = .clear
         let gist = gists[indexPath.row]
-        self.username = gist.ownerLogin
         //Check to see if we need to Load more gists
         if !isLoading {
             let rowsLoaded = gists.count
