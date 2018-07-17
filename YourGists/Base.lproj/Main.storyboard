@@ -300,87 +300,114 @@
         <scene sceneID="IaQ-zZ-ZM7">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="ur4-ql-wJV" customClass="LoginViewController" customModule="YourGists" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TXV-Zw-CB0" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="TXV-Zw-CB0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-fB-eeU">
-                                <rect key="frame" x="10" y="235.66666666666663" width="355" height="351"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdH-WY-PEW">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Gists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB3-C8-o91">
-                                        <rect key="frame" x="79.666666666666686" y="0.0" width="196" height="54"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="45"/>
-                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you can sign in to your GitHub account and work with your gists" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-Dd-OGL">
-                                        <rect key="frame" x="0.0" y="74.000000000000028" width="355" height="41"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-fA-0FA">
-                                        <rect key="frame" x="62.666666666666686" y="135.00000000000003" width="230" height="40"/>
-                                        <color key="backgroundColor" red="0.24018179084528152" green="0.68526452147360395" blue="0.093674317430505818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-fB-eeU">
+                                        <rect key="frame" x="0.0" y="192" width="375" height="351"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Gists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB3-C8-o91">
+                                                <rect key="frame" x="89.666666666666686" y="0.0" width="196" height="54"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="45"/>
+                                                <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you can sign in to your GitHub account and work with your gists" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-Dd-OGL">
+                                                <rect key="frame" x="20" y="74" width="335" height="41"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-fA-0FA">
+                                                <rect key="frame" x="72.666666666666686" y="135" width="230" height="40"/>
+                                                <color key="backgroundColor" red="0.24018179084528152" green="0.68526452147360395" blue="0.093674317430505818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="3CI-cr-ZQv"/>
+                                                    <constraint firstAttribute="height" constant="40" id="6Jz-La-RKP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <state key="normal" title="Sign In to GitHub">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tappedLoginButton:" destination="ur4-ql-wJV" eventType="touchUpInside" id="M7f-Wf-rDC"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or... you can enter a username in the text field and see GitHub Gists of this user" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-rt-ovd">
+                                                <rect key="frame" x="20" y="195" width="335" height="41"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58c-qH-gt6">
+                                                <rect key="frame" x="32.666666666666657" y="256" width="310" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="73M-gN-1Vv"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="ucu-Rj-y1u"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-jn-Zed">
+                                                <rect key="frame" x="72.666666666666686" y="311" width="230" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.49763761949855195" blue="0.8485881979695431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Upg-uX-I3a"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="iMf-7f-hkt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <state key="normal" title="Search">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchTapped:" destination="ur4-ql-wJV" eventType="touchUpInside" id="ZdD-ia-qgW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="KEc-Hl-fmz"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="d8Z-LY-R7v"/>
+                                            <constraint firstAttribute="trailing" secondItem="r1v-Dd-OGL" secondAttribute="trailing" constant="20" id="FMQ-tx-JpO"/>
+                                            <constraint firstItem="Icf-rt-ovd" firstAttribute="leading" secondItem="Gxe-fB-eeU" secondAttribute="leading" constant="20" id="QGa-Vn-pyI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Icf-rt-ovd" secondAttribute="trailing" constant="20" id="Z37-w8-bYs"/>
+                                            <constraint firstItem="r1v-Dd-OGL" firstAttribute="leading" secondItem="Gxe-fB-eeU" secondAttribute="leading" constant="20" id="duD-JR-EmY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <state key="normal" title="Sign In to GitHub">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedLoginButton:" destination="ur4-ql-wJV" eventType="touchUpInside" id="M7f-Wf-rDC"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or... you can enter a username in the text field and see GitHub Gists of this user" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-rt-ovd">
-                                        <rect key="frame" x="10.666666666666657" y="195.00000000000003" width="334" height="41"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58c-qH-gt6">
-                                        <rect key="frame" x="15" y="256" width="325" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="dFu-4E-rwb"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-jn-Zed">
-                                        <rect key="frame" x="62.666666666666686" y="311" width="230" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.49763761949855195" blue="0.8485881979695431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="hdT-ZJ-YAT"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jH4-Bn-gM6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <state key="normal" title="Search">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchTapped:" destination="ur4-ql-wJV" eventType="touchUpInside" id="ZdD-ia-qgW"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="58c-qH-gt6" firstAttribute="leading" secondItem="Gxe-fB-eeU" secondAttribute="leading" constant="15" id="dfa-tK-dI3"/>
-                                    <constraint firstAttribute="trailing" secondItem="58c-qH-gt6" secondAttribute="trailing" constant="15" id="sbA-mc-94P"/>
+                                    <constraint firstItem="Gxe-fB-eeU" firstAttribute="leading" secondItem="AdH-WY-PEW" secondAttribute="leading" id="8Ps-wh-rfq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gxe-fB-eeU" secondAttribute="trailing" id="EHr-Ki-vMc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gxe-fB-eeU" secondAttribute="bottom" id="KXJ-fF-Nia"/>
+                                    <constraint firstItem="Gxe-fB-eeU" firstAttribute="centerX" secondItem="AdH-WY-PEW" secondAttribute="centerX" id="SFY-hd-1dQ"/>
+                                    <constraint firstItem="Gxe-fB-eeU" firstAttribute="centerY" secondItem="AdH-WY-PEW" secondAttribute="centerY" id="UrX-7l-t5L"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gxe-fB-eeU" secondAttribute="trailing" id="YHw-IM-eiu"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gxe-fB-eeU" firstAttribute="centerY" secondItem="pkj-ME-4a0" secondAttribute="centerY" id="4W2-KL-h3s"/>
-                            <constraint firstItem="Gxe-fB-eeU" firstAttribute="centerX" secondItem="pkj-ME-4a0" secondAttribute="centerX" id="pbU-9e-ICP"/>
-                            <constraint firstAttribute="trailing" secondItem="Gxe-fB-eeU" secondAttribute="trailing" constant="10" id="rIr-FQ-TD8"/>
-                            <constraint firstItem="Gxe-fB-eeU" firstAttribute="leading" secondItem="pkj-ME-4a0" secondAttribute="leading" constant="10" id="z4W-B1-fhK"/>
+                            <constraint firstItem="AdH-WY-PEW" firstAttribute="trailing" secondItem="TXV-Zw-CB0" secondAttribute="trailing" id="NAi-j2-Yyh"/>
+                            <constraint firstItem="AdH-WY-PEW" firstAttribute="leading" secondItem="TXV-Zw-CB0" secondAttribute="leading" id="YU7-FN-Uhf"/>
+                            <constraint firstItem="AdH-WY-PEW" firstAttribute="bottom" secondItem="pkj-ME-4a0" secondAttribute="bottom" id="lQc-7s-I9S"/>
+                            <constraint firstItem="AdH-WY-PEW" firstAttribute="top" secondItem="pkj-ME-4a0" secondAttribute="top" id="vEn-bX-NoY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pkj-ME-4a0"/>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="AdH-WY-PEW" id="0uJ-mv-Ogo"/>
                         <outlet property="usernameTextField" destination="58c-qH-gt6" id="ced-UH-lMD"/>
                         <segue destination="0CU-57-0eP" kind="show" identifier="showGistsSegue" id="2y1-5z-lJu"/>
                     </connections>

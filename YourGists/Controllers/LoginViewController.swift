@@ -12,7 +12,7 @@ protocol LoginViewDelegate: class {
     func didTapLoginButton()
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     
     weak var delegate: LoginViewDelegate?
     
@@ -52,25 +52,51 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
+        view.addGestureRecognizer(tapGesture)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardFrame = keyboardSize.cgRectValue
-        if self.view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= keyboardFrame.height
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeObservers()
+    }
+    
+    @objc func didTapView(gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillShow(notification: notification)
+        }
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillHide(notification: notification)
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
+    func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo, let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let contentInsert = UIEdgeInsets(top: 0, left: 0, bottom: frame.height + 70, right: 0)
+        scrollView.contentInset = contentInsert
+    }
+    
+    func keyboardWillHide(notification: Notification) {
+        scrollView.contentInset = UIEdgeInsets.zero
     }
     
 }
