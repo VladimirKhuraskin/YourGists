@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol LoginViewDelegate: class {
     func didTapLoginButton()
@@ -37,10 +38,29 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
             present(ac, animated: true, completion: nil)
             return
         }
+        userExistsWith(username: usernameTextField.text!) { response in
+            if response {
+                self.performSegue(withIdentifier: "showGistsSegue", sender: nil)
+            } else {
+                let ac = UIAlertController(title: "Incorrect information", message: "There is no user with this Username, please check your details", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                ac.addAction(cancel)
+                self.present(ac, animated: true, completion: nil)
+            }
+        }
         self.username = username
-        
-        self.performSegue(withIdentifier: "showGistsSegue", sender: nil)
-        
+    }
+    
+    func userExistsWith(username: String, completion: @escaping (Bool) -> Void){
+        Alamofire.request("https://api.github.com/users/\(username)", method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success( _):
+                completion(true)
+            case .failure(let error):
+                debugPrint(error)
+                completion(false)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
